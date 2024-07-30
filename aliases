@@ -1,6 +1,6 @@
 alias v="nvim"
 alias ta="tmux new -As0"
-alias cat="bat --theme=\"Catppuccin Latte\""
+alias cat=bat
 alias top="htop -u $USER"
 alias p10kupdate="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias ncdu="ncdu --color off"
