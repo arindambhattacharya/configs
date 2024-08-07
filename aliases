@@ -8,6 +8,8 @@ alias esync="rsync -ah --progress --stats --exclude-from $HOME/.rsync_exclude"
 alias syncout='(){ aws s3 sync $1 s3://span-dev-users/aribhat/backups/$1 --exclude ".vscode/*" --exclude ".mypy_cache/*" --exclude ".venv/*" ;}'
 alias syncin='(){ aws s3 sync s3://span-dev-users/aribhat/backups/$1 $1 ;}'
 
+portfwd() { ssh -fN -L "$2":localhost:"$2" $1 }
+
 # AWS S3 related
 alias s3ls="aws s3 ls"
 
