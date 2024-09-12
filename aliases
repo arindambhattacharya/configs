@@ -17,7 +17,7 @@ alias s3ls="aws s3 ls"
 alias mi="mamba install -y"
 alias ma="mamba deactivate && mamba activate"
 alias md="mamba deactivate"
-alias pi="pip install"
+alias pi="pip install --upgrade"
 pa() { deactivate && source ~/python_venvs/$1/bin/activate }
 alias pd="deactivate"
 alias ac="accelerate config"
