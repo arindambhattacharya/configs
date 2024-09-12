@@ -22,3 +22,4 @@ pa() { deactivate && source ~/python_venvs/$1/bin/activate }
 alias pd="deactivate"
 alias ac="accelerate config"
 alias al="accelerate launch"
+alias tb="tensorboard --logdir"
