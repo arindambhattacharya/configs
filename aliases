@@ -20,7 +20,8 @@ alias ma="mamba deactivate && mamba activate"
 alias md="mamba deactivate"
 alias pi="pip install --upgrade"
 pa() { deactivate && source ~/python_venvs/$1/bin/activate }
-alias pd="deactivate"
+pc() { python$1 -m venv ~/python_venvs/$2 }
+alias pd="deactivate && source ~/python_venvs/base/bin/activate"
 alias pl="ls -1 ~/python_venvs/"
 alias ac="accelerate config"
 alias al="accelerate launch"
