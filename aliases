@@ -5,8 +5,8 @@ alias top="htop -u $USER"
 alias p10kupdate="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias ncdu="ncdu --color off"
 alias esync="rsync -ah --progress --stats --exclude-from $HOME/.rsync_exclude"
-alias syncout='(){ aws s3 sync $1 s3://span-dev-users/aribhat/backups/$1 --exclude ".vscode/*" --exclude ".mypy_cache/*" --exclude ".venv/*" ;}'
-alias syncin='(){ aws s3 sync s3://span-dev-users/aribhat/backups/$1 $1 ;}'
+alias syncout='(){ aws s3 --region us-east-1 sync $1 s3://span-dev-users/aribhat/backups/$1 --exclude ".vscode/*" --exclude ".mypy_cache/*" --exclude ".venv/*" ;}'
+alias syncin='(){ aws s3 --region us-east-1 sync s3://span-dev-users/aribhat/backups/$1 $1 ;}'
 
 portfwd() { ssh -fN -L "$3":localhost:"$2" $1 }
 
