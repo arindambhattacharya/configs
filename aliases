@@ -11,8 +11,8 @@ alias syncin='(){ aws s3 --region us-east-1 sync s3://span-dev-users/aribhat/bac
 portfwd() { ssh -fN -L "$3":localhost:"$2" $1 }
 
 # AWS S3 related
-alias s3ls="aws s3 ls"
-alias s3cp="aws s3 cp"
+alias s3ls="aws s3 --region us-east-1 ls"
+alias s3cp="aws s3 --region us-east-1 cp"
 
 # Python related
 alias mi="mamba install -y"
