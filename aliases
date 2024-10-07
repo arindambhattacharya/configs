@@ -18,11 +18,15 @@ alias s3cp="aws s3 --region us-east-1 cp"
 alias mi="mamba install -y"
 alias ma="mamba deactivate && mamba activate"
 alias md="mamba deactivate"
+
 alias pi="pip install --upgrade"
 pa() { deactivate && source ~/python_venvs/$1/bin/activate }
 pc() { python$1 -m venv ~/python_venvs/$2 }
 alias pd="deactivate && source ~/python_venvs/base/bin/activate"
 alias pl="ls -1 ~/python_venvs/"
+
+regkernel() { pip install --upgrade ipykernel && python -m ipykernel install --user --name=$1 }
+
 alias ac="accelerate config"
 alias al="accelerate launch"
 alias tb="tensorboard --logdir"
