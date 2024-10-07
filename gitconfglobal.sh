@@ -4,6 +4,8 @@ git config --global user.email "arindambhattacharya@protonmail.com"
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RF"
 git config --global interactive.diffFilter "diff-so-fancy --patch"
 
+git config --global credential.helper store
+
 git config --global color.ui true
 
 git config --global color.diff-highlight.oldNormal    "red bold"
