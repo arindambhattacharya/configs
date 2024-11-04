@@ -34,6 +34,6 @@ alias tb="tensorboard --logdir"
 
 
 # updates
-alias vim_update="cd ~/nvim && gl && cd ~"
-alias conf_update="cd ~/configs && gl && cd ~"
+alias vim_update="git -C $HOME/nvim pull"
+alias conf_update="git -C $HOME/configs pull"
 alias update="bubu && p10kupdate && vim_update && conf_update && omz update"
