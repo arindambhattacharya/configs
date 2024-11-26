@@ -21,6 +21,10 @@ alias mi="mamba install -y"
 alias ma="mamba deactivate && mamba activate"
 alias md="mamba deactivate"
 
+alias ci="conda install -y"
+alias ca="conda deactivate && conda activate"
+alias cd="conda deactivate"
+
 alias pi="pip install --upgrade"
 pa() { deactivate && source ~/python_venvs/$1/bin/activate }
 pc() { python$1 -m venv ~/python_venvs/$2 }
