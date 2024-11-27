@@ -23,7 +23,8 @@ alias md="mamba deactivate"
 
 alias ci="conda install -y"
 alias ca="conda deactivate && conda activate"
-alias cd="conda deactivate"
+alias cdeact="conda deactivate"
+alias cl="conda env list"
 
 alias pi="pip install --upgrade"
 pa() { deactivate && source ~/python_venvs/$1/bin/activate }
