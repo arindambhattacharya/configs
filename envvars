@@ -1,4 +1,3 @@
-export MAGNUS_1="i-07aa28fcee48d82f7"
 export MKTS_TOP20=("AE" "AU" "BR" "CA" "DE" "EG" "ES" "FR" "IN" "IT" "JP" "MX" "NL" "PL" "SA" "SE" "SG" "TR" "UK" "US")
 export MKTS_TOP21=("AE" "AU" "BR" "CA" "DE" "EG" "ES" "FR" "IN" "IT" "JP" "MX" "NL" "PL" "SA" "SE" "SG" "TR" "UK" "US", "BE")
 export MKTS_TOP22=("AE" "AU" "BR" "CA" "DE" "EG" "ES" "FR" "IN" "IT" "JP" "MX" "NL" "PL" "SA" "SE" "SG" "TR" "UK" "US", "BE", "ZA")
