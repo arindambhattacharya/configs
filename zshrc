@@ -1,5 +1,7 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# git clone https://github.com/jeffreytse/zsh-vi-mode \
+  # $ZSH_CUSTOM/plugins/zsh-vi-mode
 # Configure plugin variables before loading plugins
 #
 export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
