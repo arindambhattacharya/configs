@@ -14,7 +14,8 @@ portfwd() { ssh -N -L "$3":localhost:"$2" $1 }
 # AWS S3 related
 alias s3ls="aws s3 --region us-east-1 ls"
 alias s3tree="python $HOME/configs/s3tree.py"
-alias s3cp="aws s3 --region us-east-1 cp --recursive"
+alias s3cp="aws s3 --region us-east-1 cp"
+alias s3cpr="aws s3 --region us-east-1 cp --recursive"
 
 # Python related
 alias mi="mamba install -y"
