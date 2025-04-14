@@ -14,7 +14,7 @@ portfwd() { ssh -N -L "$3":localhost:"$2" $1 }
 # AWS S3 related
 alias s3ls="aws s3 --region us-east-1 ls"
 alias s3tree="python $HOME/configs/s3tree.py"
-alias s3cp="aws s3 --region us-east-1 cp"
+alias s3cp="aws s3 --region us-east-1 cp --recursive"
 
 # Python related
 alias mi="mamba install -y"
@@ -31,6 +31,9 @@ pa() { deactivate && source ~/python_venvs/$1/bin/activate }
 pc() { python$1 -m venv ~/python_venvs/$2 }
 alias pd="deactivate && source ~/python_venvs/base/bin/activate"
 alias pl="ls -1 ~/python_venvs/"
+
+alias sa="source .venv/bin/activate"
+alias sd="deactivate"
 
 regkernel() { pip install --upgrade ipykernel && python -m ipykernel install --user --name=$1 }
 
