@@ -1,49 +1,21 @@
 alias v="nvim"
-alias ta="tmux new -As0"
 alias cat=bat
-alias top="htop -u $USER"
-alias p10kupdate="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
-alias ncdu="ncdu --color off"
-alias esync="rsync -ah --progress --stats --exclude-from $HOME/.rsync_exclude"
-alias syncout='(){ aws s3 --region us-east-1 sync $1 s3://span-dev-users/aribhat/backups/$1 --exclude ".vscode/*" --exclude ".mypy_cache/*" --exclude ".venv/*" ;}'
-alias syncin='(){ aws s3 --region us-east-1 sync s3://span-dev-users/aribhat/backups/$1 $1 ;}'
-
-#portfwd() { ssh -fN -L "$3":localhost:"$2" $1 }
-portfwd() { ssh -N -L "$3":localhost:"$2" $1 }
-
-# AWS S3 related
-alias s3ls="aws s3 --region us-east-1 ls"
-alias s3tree="python $HOME/configs/s3tree.py"
-alias s3cp="aws s3 --region us-east-1 cp"
-alias s3cpr="aws s3 --region us-east-1 cp --recursive"
-
-# Python related
-alias mi="mamba install -y"
-alias ma="mamba deactivate && mamba activate"
-alias md="mamba deactivate"
-
-alias ci="conda install -y"
-alias ca="conda deactivate && conda activate"
-alias cdeact="conda deactivate"
-alias cl="conda env list"
-
-alias pi="pip install --upgrade"
-pa() { deactivate && source ~/python_venvs/$1/bin/activate }
-pc() { python$1 -m venv ~/python_venvs/$2 }
-alias pd="deactivate && source ~/python_venvs/base/bin/activate"
-alias pl="ls -1 ~/python_venvs/"
-
-alias sa="source .venv/bin/activate"
-alias sd="deactivate"
-
-regkernel() { pip install --upgrade ipykernel && python -m ipykernel install --user --name=$1 }
-
-alias ac="accelerate config"
-alias al="accelerate launch"
-alias tb="tensorboard --logdir"
-
+alias ping="prettyping --nolegend"
 
 # updates
+alias p10kupdate="git -C ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k pull"
 alias vim_update="git -C $HOME/nvim pull"
 alias conf_update="git -C $HOME/configs pull"
 alias update="bubu && p10kupdate && vim_update && conf_update && omz update"
+
+# Function to clean up LaTeX auxiliary files
+latex_cleanup() {
+  find . -type f \( -name "*.aux" -o -name "*.log" -o -name "*.nav" -o -name "*.out" -o -name "*.snm" -o -name "*.toc" -o -name "*.bbl" -o -name "*.blg" -o -name "*.idx" -o -name "*.ind" -o -name "*.ilg" -o -name "*.lof" -o -name "*.lot" -o -name "*.fls" -o -name "*.fdb_latexmk" -o -name "*.synctex.gz" -o -name "*.xdv" -o -name "*.dvi" -o -name "*.ps" -o -name "*.bcf" -o -name "*.run.xml" -o -name "*.bak" \) -delete
+
+  if [ "$1" = "pdf" ]; then
+    find . -type f -name "*.pdf" -delete
+    echo "LaTeX auxiliary and PDF files cleaned up."
+  else
+    echo "LaTeX auxiliary files cleaned up. PDFs kept."
+  fi
+}
